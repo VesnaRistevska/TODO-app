@@ -14,7 +14,10 @@ export class TodoAddComponent implements OnInit {
   addItemsForm: FormGroup;
   itemToEdit: any;
 
-  constructor(private sharedService: SharedService) {
+
+  constructor(
+    private sharedService: SharedService
+  ) {
     this.sharedService.editItem.subscribe(res => {
       if (res) {
         this.itemToEdit = res;
