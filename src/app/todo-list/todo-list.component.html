@@ -1,0 +1,10 @@
+<ul class="list-group" *ngFor="let item of todoList">
+    <li class="list-group-item d-flex justify-content-between" [ngClass]="{'done-true': item.isDone, 'done-false': !item.isDone}">{{item.item}}
+        <div>
+            <i class="fa fa-check p-2" aria-hidden="true" *ngIf="!item.isDone" (click)="markDone(item)"></i>
+            <i class="fa fa-undo p-2" aria-hidden="true" *ngIf="item.isDone" (click)="markItemAsNotDone(item)"></i>
+            <i class="fa fa-pencil p-2" aria-hidden="true" (click)="editItem(item)"></i>
+            <i class="fa fa-trash p-2" aria-hidden="true" (click)="deleteItem(item)"></i>
+        </div>
+        </li>
+  </ul>

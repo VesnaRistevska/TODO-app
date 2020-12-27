@@ -1,0 +1,8 @@
+<form [formGroup]="addItemsForm" class="inputForm d-flex">
+    <div class="form-group">
+      <input type="text" class="form-control" formControlName="item" aria-describedby="emailHelp" placeholder="Add TODO item">
+    </div>
+    <button type="submit" *ngIf="!itemToEdit"(click)="addItems(addItemsForm.value)" class="btn btn-primary btn-rounded"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <button type="submit" *ngIf="itemToEdit" (click)="saveItem(addItemsForm.value)" class="btn btn-primary btn-rounded"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+
+</form>
